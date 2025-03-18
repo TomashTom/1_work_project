@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Tomash Shop</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/modern_style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">Tomash Shop</div>
+    <nav>
+        <ul>
+            <li><a href="../../index.html">Pradžia</a></li>
+            <li><a href="about.html">Apie mus</a></li>
+            <li><a href="contact.html">Kontaktai</a></li>
+            <li><a href="submissions.html">Paraiškos</a></li>
+            <li><a href="services.html">Paslaugos</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="container mt-5">
+    <h2 class="text-center">Mūsų portfolio</h2>
+
+    <div class="filter-buttons">
+        <button class="filter-btn" data-category="all">Visi</button>
+        <button class="filter-btn" data-category="ecommerce">El. parduotuvės</button>
+        <button class="filter-btn" data-category="business">Verslo tinklalapiai</button>
+        <button class="filter-btn" data-category="portfolio">Portfolio</button>
+    </div>
+    
+
+    <div class="row projects-container">
+        <div class="col-md-4 project-card" data-category="ecommerce">
+            <div class="card">
+                <img src="../../images/project1.jpg" class="card-img-top" alt="Projektas 1">
+                <div class="card-body">
+                    <h5 class="card-title">El. parduotuvė</h5>
+                    <p class="card-text">Moderni, patogi naudotojui ir optimizuota parduotuvė.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 project-card" data-category="business">
+            <div class="card">
+                <img src="../../images/project2.jpg" class="card-img-top" alt="Projektas 2">
+                <div class="card-body">
+                    <h5 class="card-title">Verslo tinklalapis</h5>
+                    <p class="card-text">Efektyvus ir patikimas tinklalapis Jūsų verslui.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 project-card" data-category="portfolio">
+            <div class="card">
+                <img src="../../images/project3.jpg" class="card-img-top" alt="Projektas 3">
+                <div class="card-body">
+                    <h5 class="card-title">Asmeninis portfolio</h5>
+                    <p class="card-text">Minimalistinis dizainas kūrybiškam žmogui.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="../../assets/js/modern_script.js"></script>
+</body>
+</html>
