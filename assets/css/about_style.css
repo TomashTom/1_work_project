@@ -1,4 +1,4 @@
-/* Komandos sekcija */
+
 .team-section {
     text-align: center;
     padding: 40px 20px;
@@ -13,7 +13,7 @@
     margin-bottom: 20px;
 }
 
-/* Komandos slankiojanti galerija */
+
 .team-carousel {
     display: flex;
     overflow: hidden;
@@ -23,14 +23,13 @@
     position: relative;
 }
 
-/* Slankiojantis elementų konteineris */
 .team-track {
     display: flex;
     gap: 20px;
     animation: scrollTeam 15s linear infinite;
 }
 
-/* Kiekvieno komandos nario kortelė */
+
 .team-member {
     background: white;
     padding: 20px;
@@ -41,7 +40,7 @@
     flex-shrink: 0;
 }
 
-/* Nuotraukos */
+
 .team-member img {
     width: 100%;
     height: auto;
@@ -49,7 +48,7 @@
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Tekstas po nuotrauka */
+
 .team-member h3 {
     font-size: 18px;
     margin: 10px 0 5px;
@@ -62,7 +61,7 @@
     color: #666;
 }
 
-/* Automatinis slankiojimas */
+
 @keyframes scrollTeam {
     0% { transform: translateX(0); }
     100% { transform: translateX(-100%); }

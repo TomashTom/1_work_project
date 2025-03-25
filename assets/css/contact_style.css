@@ -1,4 +1,4 @@
-/* Bendri nustatymai */
+
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -10,7 +10,7 @@ body {
     align-items: center;
 }
 
-/* Navigacija */
+
 header {
     width: 100%;
     display: flex;
@@ -48,7 +48,6 @@ nav ul li a:hover {
     color: #FFC107;
 }
 
-/* Kontaktų forma */
 .contact-container {
     display: flex;
     justify-content: center;
@@ -68,7 +67,7 @@ nav ul li a:hover {
     text-align: left;
 }
 
-/* Formos stilius */
+
 .box h2 {
     text-align: center;
     font-weight: bold;
@@ -91,7 +90,7 @@ input, textarea {
     font-size: 1rem;
 }
 
-/* Mygtuko stilius */
+
 button {
     width: 100%;
     background-color: #007BFF;
@@ -109,7 +108,7 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Lentelės stilius */
+
 .table-section {
     width: 80%;
     margin: auto;
@@ -121,7 +120,7 @@ button:hover {
     max-width: 800px;
 }
 
-/* Lentelės konteineris su slankiu „scroll“ */
+
 .table-container {
     max-height: 300px; 
     overflow-y: auto; 
@@ -156,7 +155,7 @@ tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-/* Mobilus dizainas */
+
 @media (max-width: 1024px) {
     .contact-container {
         flex-direction: column;
@@ -181,7 +180,7 @@ input, textarea, select {
     font-size: 1rem;
 }
 
-/* Dropdown meniu dizainas */
+
 select {
     appearance: none;
     background: #fff;
@@ -190,13 +189,13 @@ select {
     cursor: pointer;
 }
 
-/* Kai laukelis aktyvus */
+
 select:focus {
     border-color: #007BFF;
     outline: none;
 }
 
-/* Kai užvedamas pelės kursorius */
+
 select:hover {
     border-color: #0056b3;
 }
@@ -224,7 +223,7 @@ select:hover {
     gap: 40px;
 }
 
-/* Kontaktinė forma */
+
 .contact-form {
     width: 55%;
     padding: 30px;
@@ -233,7 +232,7 @@ select:hover {
     backdrop-filter: blur(10px);
 }
 
-/* Paveikslėlis */
+
 .contact-image {
     width: 45%;
     display: flex;
@@ -248,7 +247,7 @@ select:hover {
     box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Formos elementai */
+
 .input-group {
     margin-bottom: 15px;
 }
@@ -295,14 +294,14 @@ select:hover {
     transform: scale(1.05);
 }
 
-/* Atsiliepimas */
+
 #success-message {
     margin-top: 10px;
     text-align: center;
     font-weight: bold;
 }
 
-/* Responsyvus dizainas */
+
 @media (max-width: 1024px) {
     .contact-wrapper {
         flex-direction: column;

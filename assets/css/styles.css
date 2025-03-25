@@ -1,4 +1,4 @@
-/* Bendri nustatymai */
+
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -11,7 +11,6 @@ body {
     text-align: center;
 }
 
-/* Navigacija */
 header {
     width: 98%;
     display: flex;
@@ -50,7 +49,7 @@ nav ul li a:hover {
     color: #FFC107;
 }
 
-/* Hero sekcija */
+
 .hero {
     background: linear-gradient(to right, #007BFF, #00C6FF);
     color: white;
@@ -85,7 +84,7 @@ nav ul li a:hover {
     background: #ff9800;
 }
 
-/* Turinys */
+
 .content {
     display: flex;
     justify-content: center;
@@ -103,7 +102,7 @@ nav ul li a:hover {
     text-align: center;
 }
 
-/* Footer */
+
 footer {
     background: #333;
     color: white;
@@ -118,7 +117,6 @@ footer {
 
 
 
-/* Paslaugų sekcija */
 .services {
     text-align: center;
     padding: 60px 20px;
@@ -131,7 +129,7 @@ footer {
     color: #333;
 }
 
-/* Kortelių konteineris */
+
 .services-container {
     display: flex;
     justify-content: center;
@@ -139,7 +137,7 @@ footer {
     gap: 20px;
 }
 
-/* Kiekviena paslaugos kortelė */
+
 .service-box {
     background: white;
     padding: 20px;
@@ -150,26 +148,26 @@ footer {
     transition: transform 0.3s ease-in-out;
 }
 
-/* Ikonos */
+
 .service-box i {
     font-size: 40px;
     color: #007BFF;
     margin-bottom: 10px;
 }
 
-/* Pavadinimas */
+
 .service-box h3 {
     font-size: 20px;
     margin-bottom: 10px;
 }
 
-/* Tekstas */
+
 .service-box p {
     font-size: 14px;
     color: #555;
 }
 
-/* Hover efektas */
+
 .service-box:hover {
     transform: translateY(-5px);
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
@@ -207,7 +205,7 @@ footer {
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Tekstas kairėje */
+
 .about-text {
     flex: 1;
     padding-right: 20px;
@@ -223,7 +221,6 @@ footer {
     color: #555;
 }
 
-/* Paveikslėlis dešinėje */
 .about-image {
     flex: 1;
     text-align: center;
@@ -236,7 +233,6 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Galerijos sekcija */
 .gallery {
     display: flex;
     align-items: center;
@@ -273,7 +269,6 @@ footer {
     transform: scale(1.05);
 }
 
-/* Mobiliems įrenginiams */
 @media (max-width: 768px) {
     .about-section {
         flex-direction: column;
@@ -289,7 +284,6 @@ footer {
     }
 }
 @media (max-width: 768px) {
-    /* Header – navigacija į stulpelį */
     header {
         flex-direction: column;
         align-items: flex-start;
@@ -306,7 +300,6 @@ footer {
         margin: 10px 0;
     }
 
-    /* Hero sekcija */
     .hero {
         width: 95%;
         padding: 40px 15px;
@@ -320,7 +313,7 @@ footer {
         font-size: 16px;
     }
 
-    /* Paslaugų sekcija */
+
     .services-container {
         flex-direction: column;
         align-items: center;
@@ -330,12 +323,12 @@ footer {
         width: 90%;
     }
 
-    /* Bendri elementai */
+
     .box {
         width: 90%;
     }
 
-    /* Galerija – sumažinam plotį */
+
     .gallery-wrapper {
         width: 90%;
     }
