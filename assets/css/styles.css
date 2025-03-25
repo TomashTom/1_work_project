@@ -288,3 +288,59 @@ footer {
         max-width: 100%;
     }
 }
+@media (max-width: 768px) {
+    /* Header – navigacija į stulpelį */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    /* Hero sekcija */
+    .hero {
+        width: 95%;
+        padding: 40px 15px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    /* Paslaugų sekcija */
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-box {
+        width: 90%;
+    }
+
+    /* Bendri elementai */
+    .box {
+        width: 90%;
+    }
+
+    /* Galerija – sumažinam plotį */
+    .gallery-wrapper {
+        width: 90%;
+    }
+
+    .gallery-track img {
+        width: 90%;
+    }
+}
