@@ -8,6 +8,10 @@ import Kontaktai from './components/Kontaktai';
 import Paraiskos from './components/Paraiskos';
 import Paslaugos from './components/Paslaugos';
 import Portfolio from './components/Portfolio';
+import Register from './components/Register';
+import Login from './components/Login';
+
+
 
 function App() {
   return (
@@ -20,6 +24,8 @@ function App() {
         <Route path="/paraiskos" element={<Paraiskos />} />
         <Route path="/paslaugos" element={<Paslaugos />} />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );
