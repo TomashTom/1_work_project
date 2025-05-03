@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+  }
+  
+.fade-in {
+    animation: fadeIn ease 0.8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(15px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  body.light {
+    background-color: #f8f9fa;
+    color: #000;
+  }
+  body.dark {
+    background-color: #121212;
+    color: #fff;
+  }
+  .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .table {
+    width: 100% !important;
+    table-layout: fixed;
+  }
+  
+  
+  .table td, .table th {
+    vertical-align: middle;
+  }
+  
+  
+  

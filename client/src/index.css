@@ -5,9 +5,67 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+  transition: all 0.3s ease;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body.dark {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.card, .table, .form-control {
+  background-color: inherit !important;
+  color: inherit !important;
+  border-color: #ccc;
+}
+
+.btn {
+  transition: all 0.3s ease;
+}
+body.light {
+  background-color: #ffffff;
+  color: #000;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #fff;
+}
+
+.card, .table, .modal-content {
+  background-color: inherit;
+  color: inherit;
+}
+
+.logout-button {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #dc3545;
+  color: #fff;
+}
+

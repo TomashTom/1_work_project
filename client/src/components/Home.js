@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 
 function Home() {
   const user = JSON.parse(localStorage.getItem('user'));
@@ -13,7 +14,10 @@ function Home() {
   return (
     <>
       <header>
-        <div className="logo">Tomash Shop</div>
+        <div className="logo">
+          Tomash Shop
+          <ThemeToggle />
+          </div>
         <nav>
           <ul>
             <li><Link to="/">Pradžia</Link></li>
