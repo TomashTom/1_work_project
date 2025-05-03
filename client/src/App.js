@@ -1,13 +1,27 @@
 import React from 'react';
-import './App.css'; // jei dar nori naudoti stilių
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import Home from './components/Home';
 import UserManager from './components/UserManager';
+import Apie from './components/Apie';
+import Kontaktai from './components/Kontaktai';
+import Paraiskos from './components/Paraiskos';
+import Paslaugos from './components/Paslaugos';
+import Portfolio from './components/Portfolio';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Tomash Shop MERN CRUD</h1>
-      <UserManager />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/admin" element={<UserManager />} />
+        <Route path="/apie" element={<Apie />} />
+        <Route path="/kontaktai" element={<Kontaktai />} />
+        <Route path="/paraiskos" element={<Paraiskos />} />
+        <Route path="/paslaugos" element={<Paslaugos />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+      </Routes>
+    </Router>
   );
 }
 
