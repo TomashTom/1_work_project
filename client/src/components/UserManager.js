@@ -36,7 +36,7 @@ function UserManager() {
   const [createPassword, setCreatePassword] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
-  const [logs, setLogs] = useState([]);
+  // const [logs, setLogs] = useState([]);
 
 
 
@@ -52,10 +52,10 @@ function UserManager() {
   }, []);
  
 
-  useEffect(() => {
-    axios.get('/api/logs')
-    .then(res => setLogs(res.data));
-  }, []);
+  // useEffect(() => {
+  //   axios.get('/api/logs')
+  //   .then(res => setLogs(res.data));
+  // }, []);
 
   const handleCreate = async (e) => {
     e.preventDefault();
@@ -226,7 +226,7 @@ function UserManager() {
           ))}
         </Pagination>
 
-        <h4 className="mt-5">📝 Paskutiniai veiksmai</h4>
+        {/* <h4 className="mt-5">📝 Paskutiniai veiksmai</h4>
           <Table striped bordered hover>
             <thead>
               <tr>
@@ -244,7 +244,7 @@ function UserManager() {
                 </tr>
               ))}
             </tbody>
-          </Table>
+          </Table> */}
 
 
         {/* Modal: Redaguoti */}
