@@ -1,9 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
+import { Link, useNavigate } from 'react-router-dom';
 
 function Home() {
   const user = JSON.parse(localStorage.getItem('user'));
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    navigate(0); 
+  };
 
   return (
     <>
@@ -29,7 +34,12 @@ function Home() {
                 <li><Link to="/paraiskos">Paraiškos</Link></li>
                 <li><Link to="/admin">Admin</Link></li>
                 <li className="user-greeting">
-                  <span style={{ color: 'white', fontWeight: 'bold' }}>Sveiki, {user.name}</span>
+                  <span style={{ color: 'white', fontWeight: 'bold' }}>
+                    Sveiki, {user.name}
+                  </span>
+                </li>
+                <li>
+                  <button onClick={handleLogout} className="logout-button">Atsijungti</button>
                 </li>
               </>
             )}

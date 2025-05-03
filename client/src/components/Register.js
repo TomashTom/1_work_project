@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // <-- Importuoti navigaciją
+import { useNavigate } from 'react-router-dom';
+import '../assets/css/login.css'; // Naudojame tą patį failą kaip Login
 
 function Register() {
   const [form, setForm] = useState({ name: '', email: '', password: '' });
   const [msg, setMsg] = useState('');
-  const navigate = useNavigate(); // <-- Navigacijos hookas
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -13,23 +14,41 @@ function Register() {
       await axios.post('/api/auth/register', form);
       setMsg('Registracija sėkminga!');
       setTimeout(() => {
-        navigate('/login'); // <-- Peradresavimas po registracijos
-      }, 1000); // Paliekame 1 sekundę žinutei parodyti
+        navigate('/login'); // Po registracijos nukreipiama į prisijungimą
+      }, 1000);
     } catch (err) {
       setMsg(err.response?.data?.error || 'Klaida');
     }
   };
 
   return (
-    <div>
-      <h2>Registracija</h2>
-      <form onSubmit={handleSubmit}>
-        <input placeholder="Vardas" onChange={e => setForm({ ...form, name: e.target.value })} />
-        <input placeholder="El. paštas" onChange={e => setForm({ ...form, email: e.target.value })} />
-        <input type="password" placeholder="Slaptažodis" onChange={e => setForm({ ...form, password: e.target.value })} />
+    <div className="login-container">
+      <form className="login-card" onSubmit={handleSubmit}>
+        <h2>Registracija</h2>
+        <input
+          type="text"
+          placeholder="Vardas"
+          value={form.name}
+          onChange={e => setForm({ ...form, name: e.target.value })}
+          required
+        />
+        <input
+          type="email"
+          placeholder="El. paštas"
+          value={form.email}
+          onChange={e => setForm({ ...form, email: e.target.value })}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Slaptažodis"
+          value={form.password}
+          onChange={e => setForm({ ...form, password: e.target.value })}
+          required
+        />
         <button type="submit">Registruotis</button>
+        {msg && <p className="msg">{msg}</p>}
       </form>
-      {msg && <p>{msg}</p>}
     </div>
   );
 }

@@ -190,6 +190,19 @@ footer {
     margin-left: 20px;
     list-style: none;
   }
+  .logout-button {
+    background: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .logout-button:hover {
+    text-decoration: underline;
+  }
+  
   
 
 
