@@ -3,11 +3,11 @@ const router = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const upload = require('../middleware/upload');
+
 
 // Register
 // POST /api/auth/register su failo įkėlimu
-router.post('/register', upload.single('avatar'), async (req, res) => {
+router.post('/register', async (req, res) => {
     try {
       const {
         nickname,
@@ -26,7 +26,7 @@ router.post('/register', upload.single('avatar'), async (req, res) => {
       };
   
       // Jei buvo pridėta nuotrauka – saugom jos kelią
-      const avatarUrl = req.file ? `/uploads/${req.file.filename}` : undefined;
+      const avatarUrl = req.body.avatarUrl;
   
       // Slaptažodžio hash'inimas
       const hashedPassword = await bcrypt.hash(password, 10);

@@ -9,6 +9,7 @@ import 'jspdf-autotable';
 import autoTable from 'jspdf-autotable'; 
 
 
+
 const ADMIN_PASSWORD = process.env.REACT_APP_ADMIN_SECRET || 'Slaptas123';
 
 function UserManager() {
@@ -35,6 +36,8 @@ function UserManager() {
   const [createPassword, setCreatePassword] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
+  const [logs, setLogs] = useState([]);
+
 
 
   const fetchUsers = async () => {
@@ -42,8 +45,16 @@ function UserManager() {
     setUsers(res.data);
   };
 
+  
+
   useEffect(() => {
     fetchUsers();
+  }, []);
+ 
+
+  useEffect(() => {
+    axios.get('/api/logs')
+    .then(res => setLogs(res.data));
   }, []);
 
   const handleCreate = async (e) => {
@@ -214,6 +225,27 @@ function UserManager() {
             </Pagination.Item>
           ))}
         </Pagination>
+
+        <h4 className="mt-5">📝 Paskutiniai veiksmai</h4>
+          <Table striped bordered hover>
+            <thead>
+              <tr>
+                <th>Veiksmas</th>
+                <th>Vartotojas</th>
+                <th>Data</th>
+              </tr>
+            </thead>
+            <tbody>
+              {logs.map(log => (
+                <tr key={log._id}>
+                  <td>{log.action}</td>
+                  <td>{log.userName}</td>
+                  <td>{new Date(log.timestamp).toLocaleString()}</td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+
 
         {/* Modal: Redaguoti */}
         <Modal show={showModal} onHide={() => setShowModal(false)}>
