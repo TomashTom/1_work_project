@@ -186,7 +186,11 @@ footer {
     }
 }
 
-
+.user-greeting {
+    margin-left: 20px;
+    list-style: none;
+  }
+  
 
 
 

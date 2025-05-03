@@ -1,24 +1,40 @@
 import React from 'react';
-import '../assets/css/styles.css'; 
 import { Link } from 'react-router-dom';
 
+
 function Home() {
+  const user = JSON.parse(localStorage.getItem('user'));
+
   return (
     <>
       <header>
         <div className="logo">Tomash Shop</div>
         <nav>
-            <ul>
-                <li><Link to="/">Pradžia</Link></li>
-                <li><Link to="/apie">Apie mus</Link></li>
-                <li><Link to="/kontaktai">Kontaktai</Link></li>
-                <li><Link to="/paraiskos">Paraiškos</Link></li>
-                <li><Link to="/paslaugos">Paslaugos</Link></li>
-                <li><Link to="/portfolio">Portfolio</Link></li>
-                <li><Link to="/admin">Admin</Link></li>
-            </ul>
-            </nav>
+          <ul>
+            <li><Link to="/">Pradžia</Link></li>
+            <li><Link to="/apie">Apie mus</Link></li>
+            <li><Link to="/kontaktai">Kontaktai</Link></li>
+            <li><Link to="/paslaugos">Paslaugos</Link></li>
+            <li><Link to="/portfolio">Portfolio</Link></li>
 
+            {!user && (
+              <>
+                <li><Link to="/register">Registracija</Link></li>
+                <li><Link to="/login">Prisijungti</Link></li>
+              </>
+            )}
+
+            {user && (
+              <>
+                <li><Link to="/paraiskos">Paraiškos</Link></li>
+                <li><Link to="/admin">Admin</Link></li>
+                <li className="user-greeting">
+                  <span style={{ color: 'white', fontWeight: 'bold' }}>Sveiki, {user.name}</span>
+                </li>
+              </>
+            )}
+          </ul>
+        </nav>
       </header>
 
       <section className="hero">

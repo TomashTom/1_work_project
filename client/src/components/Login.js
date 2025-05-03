@@ -1,15 +1,22 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 
 function Login() {
   const [form, setForm] = useState({ email: '', password: '' });
   const [msg, setMsg] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await axios.post('/api/auth/login', form);
+      localStorage.setItem('user', JSON.stringify(res.data.user)); // <-- ČIA SVARBIAUSIA
       setMsg(`Sveiki, ${res.data.user.name}`);
+      setTimeout(() => {
+        navigate('/');
+      }, 1000);
     } catch (err) {
       setMsg(err.response?.data?.error || 'Prisijungimo klaida');
     }
