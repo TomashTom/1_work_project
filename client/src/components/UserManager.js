@@ -6,6 +6,8 @@ import {
 import { CSVLink } from 'react-csv';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
+import autoTable from 'jspdf-autotable'; 
+
 
 const ADMIN_PASSWORD = process.env.REACT_APP_ADMIN_SECRET || 'Slaptas123';
 
@@ -16,7 +18,13 @@ function UserManager() {
     email: '',
     phone: '',
     avatarUrl: '',
-    dateOfBirth: ''
+    dateOfBirth: '',
+    address: {
+      street: '',
+      city: '',
+      zip: '',
+      country: ''
+    }
   });
   const [filter, setFilter] = useState('');
   const [showModal, setShowModal] = useState(false);
@@ -27,6 +35,7 @@ function UserManager() {
   const [createPassword, setCreatePassword] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
+
 
   const fetchUsers = async () => {
     const res = await axios.get('/api/users');
@@ -46,7 +55,7 @@ function UserManager() {
     try {
       await axios.post('/api/users', { ...form, password: ADMIN_PASSWORD });
       fetchUsers();
-      setForm({ name: '', email: '', phone: '', avatarUrl: '', dateOfBirth: '' });
+      setForm({ name: '', email: '', phone: '', avatarUrl: '', dateOfBirth: '', address: { street: '', city: '', zip: '', country: '' } });
       setShowCreateModal(false);
       setCreatePassword('');
     } catch (err) {
@@ -74,7 +83,13 @@ function UserManager() {
         email: passwordPrompt.user.email || '',
         phone: passwordPrompt.user.phone || '',
         avatarUrl: passwordPrompt.user.avatarUrl || '',
-        dateOfBirth: passwordPrompt.user.dateOfBirth?.slice(0, 10) || ''
+        dateOfBirth: passwordPrompt.user.dateOfBirth?.slice(0, 10) || '',
+        address: {
+          street: passwordPrompt.user.address?.street || '',
+          city: passwordPrompt.user.address?.city || '',
+          zip: passwordPrompt.user.address?.zip || '',
+          country: passwordPrompt.user.address?.country || ''
+        }
       });
       setShowModal(true);
     } else if (passwordPrompt.action === 'delete') {
@@ -102,14 +117,19 @@ function UserManager() {
 
   const handleExportPDF = () => {
     const doc = new jsPDF();
-    doc.text('Vartotojų sąrašas', 14, 16);
-    doc.autoTable({
-      head: [['Vardas', 'El. paštas', 'Telefonas', 'Gimimo data']],
-      body: users.map((u) => [u.name, u.email, u.phone, u.dateOfBirth?.slice(0, 10)]),
+    autoTable(doc, {
+      head: [['Vardas', 'El. paštas', 'Telefonas', 'Gimimo data', 'Adresas']],
+      body: users.map((u) => [
+        u.name || '',
+        u.email || '',
+        u.phone || '',
+        u.dateOfBirth?.slice(0, 10) || '',
+        `${u.address?.street || ''}, ${u.address?.city || ''}, ${u.address?.zip || ''}, ${u.address?.country || ''}`
+        
+      ]),
     });
     doc.save('users.pdf');
   };
-
   const filteredUsers = users.filter(user =>
     user.name?.toLowerCase().includes(filter.toLowerCase()) ||
     user.email?.toLowerCase().includes(filter.toLowerCase())
@@ -125,12 +145,28 @@ function UserManager() {
       <Container fluid className="px-5 mt-4">
         <h2 className="text-center mb-4">Vartotojų valdymas</h2>
 
-        <div className="d-flex justify-content-between mb-3">
+        {/* <div className="d-flex justify-content-between mb-3">
           <Button variant="success" onClick={() => setShowCreateModal(true)}>➕ Pridėti naują vartotoją</Button>
           <InputGroup style={{ maxWidth: '300px' }}>
             <Form.Control placeholder="Ieškoti pagal vardą ar el. paštą..." value={filter} onChange={(e) => setFilter(e.target.value)} />
           </InputGroup>
-        </div>
+        </div> */}
+        <Row className="align-items-center justify-content-between mb-3">
+          <Col xs="auto">
+            <Button variant="success" size="sm" onClick={() => setShowCreateModal(true)}>
+              ➕ Pridėti naują vartotoją
+            </Button>
+          </Col>
+          <Col xs={12} sm={6} md={4}>
+            <InputGroup size="sm">
+              <Form.Control
+                placeholder="Ieškoti pagal vardą ar el. paštą..."
+                value={filter}
+                onChange={(e) => setFilter(e.target.value)}
+              />
+            </InputGroup>
+          </Col>
+        </Row>
 
         <Row className="mb-3">
           <Col md={6}>
@@ -199,6 +235,34 @@ function UserManager() {
               <Form.Group className="mb-3"><Form.Label>Gimimo data</Form.Label>
                 <Form.Control type="date" value={form.dateOfBirth} onChange={e => setForm({ ...form, dateOfBirth: e.target.value })} />
               </Form.Group>
+              <Form.Group className="mb-3"><Form.Label>Gatvė</Form.Label>
+              <Form.Control value={form.address.street} onChange={e => setForm({
+                ...form,
+                address: { ...form.address, street: e.target.value }
+              })} />
+            </Form.Group>
+
+            <Form.Group className="mb-3"><Form.Label>Miestas</Form.Label>
+              <Form.Control value={form.address.city} onChange={e => setForm({
+                ...form,
+                address: { ...form.address, city: e.target.value }
+              })} />
+            </Form.Group>
+
+            <Form.Group className="mb-3"><Form.Label>Pašto kodas</Form.Label>
+              <Form.Control value={form.address.zip} onChange={e => setForm({
+                ...form,
+                address: { ...form.address, zip: e.target.value }
+              })} />
+            </Form.Group>
+
+            <Form.Group className="mb-3"><Form.Label>Šalis</Form.Label>
+              <Form.Control value={form.address.country} onChange={e => setForm({
+                ...form,
+                address: { ...form.address, country: e.target.value }
+              })} />
+            </Form.Group>
+
             </Form>
           </Modal.Body>
           <Modal.Footer>
