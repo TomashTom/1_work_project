@@ -1,4 +1,4 @@
-
+/* 
 .team-section {
     text-align: center;
     padding: 40px 20px;
@@ -67,4 +67,348 @@
     100% { transform: translateX(-100%); }
 }
 
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+  }
+  
+  .team-member {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+    padding: 15px;
+    text-align: center;
+    width: 220px;
+    transition: transform 0.3s ease;
+  }
+  
+  .team-member:hover {
+    transform: scale(1.03);
+  }
+  
+  .team-member img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+  .custom-select {
+    padding: 10px 16px;
+    font-size: 16px;
+    border: 2px solid #007BFF;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #333;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    appearance: none;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  
+  .custom-select:focus {
+    outline: none;
+    border-color: #0056b3;
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.25);
+  }
+  
+  .custom-select:hover {
+    background-color: #f0f8ff;
+  }
+  .custom-select {
+    padding: 10px 14px;
+    font-size: 16px;
+    font-weight: 500;
+    border: 2px solid #007BFF;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    max-width: 300px;
+  }
+  
+  .custom-select:hover {
+    background-color: #f8f9fa;
+    border-color: #0056b3;
+  }
+  
+  .custom-select:focus {
+    outline: none;
+    border-color: #0056b3;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  }
+  
+  Optional: better label styling */
+  /* label[for="roleFilter"] {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+  } */
+/* Bendras stilius */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header */
+  header {
+    background-color: #007BFF;
+    padding: 16px 32px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+  }
+  header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  header nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Sekcijos */
+  .about-section,
+  .content,
+  .gallery,
+  .team-section {
+    padding: 40px 5%;
+  }
+  
+  /* Apie mus */
+  .about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .about-text {
+    flex: 1;
+  }
+  .about-image img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* Galerija */
+  .gallery-wrapper {
+    overflow: hidden;
+  }
+  .gallery-track {
+    display: flex;
+    gap: 10px;
+    animation: scrollGallery 20s linear infinite;
+  }
+  .gallery-track img {
+    max-width: 250px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  @keyframes scrollGallery {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  /* Komandos filtravimas */
+  .team-section {
+    background-color: #f0f4f8;
+    border-top: 2px solid #ccc;
+  }
+  .team-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .team-filter {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  label[for="roleFilter"] {
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 10px;
+    color: #333;
+  }
+  .custom-select {
+    padding: 10px 14px;
+    font-size: 16px;
+    border: 2px solid #007BFF;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #333;
+    max-width: 300px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease-in-out;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    padding-right: 36px;
+  }
+  .custom-select:hover {
+    background-color: #f8f9fa;
+    border-color: #0056b3;
+  }
+  .custom-select:focus {
+    outline: none;
+    border-color: #0056b3;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  }
+  
+  /* Komandos nariai */
+  .team-carousel,
+  .team-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .team-track {
+    display: flex;
+    gap: 20px;
+    animation: scrollGallery 15s linear infinite;
+  }
+  .team-member {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+    width: 220px;
+  }
+  .team-member img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  .team-member h3 {
+    color: #007BFF;
+    margin: 10px 0 5px;
+  }
+  .team-member p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  .photo-scroll {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  margin-bottom: 20px;
+}
 
+.photo-scroll::before,
+.photo-scroll::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 60px;
+  z-index: 2;
+}
+.photo-scroll::before {
+  left: 0;
+  background: linear-gradient(to right, #f0f4f8, transparent);
+}
+.photo-scroll::after {
+  right: 0;
+  background: linear-gradient(to left, #f0f4f8, transparent);
+}
+
+.photo-scroll .photo-item {
+  display: inline-block;
+  margin: 0 10px;
+  animation: scrollPhotos 25s linear infinite;
+}
+.photo-scroll .photo-item img {
+  height: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes scrollPhotos {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.team-grid-static {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.team-grid-static .team-member img {
+  display: none;
+}
+.team-carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+    padding: 10px 0;
+    position: relative;
+  }
+  
+  .team-carousel-track {
+    display: flex;
+    gap: 20px;
+    animation: scrollCarousel 40s linear infinite;
+    width: max-content;
+  }
+  
+  .team-member {
+    flex: 0 0 auto;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    width: 220px;
+    transition: transform 0.3s ease;
+  }
+  .team-member img {
+    width: 100%;
+    height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  .team-member h3 {
+    color: #007bff;
+    margin-bottom: 5px;
+  }
+  
+  @keyframes scrollCarousel {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
