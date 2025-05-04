@@ -1,4 +1,4 @@
-
+/* 
 .clear-btn {
     background-color: red;
     color: white;
@@ -337,4 +337,141 @@ tr:nth-child(even) {
     max-width: 300px; /* Maksimalus dydis 300px */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+} */
+
+
+
+
+
+
+
+.submissions-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f7f9fb;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .submissions-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+  }
+  
+  .form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+  
+  .form input {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    flex: 1 1 200px;
+    font-size: 14px;
+    transition: border 0.3s;
+  }
+  
+  .form input:focus {
+    outline: none;
+    border-color: #005bbb;
+  }
+  
+  .form button {
+    background-color: #005bbb;
+    color: white;
+    border: none;
+    padding: 7px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease;
+  }
+  
+  .form button:hover {
+    background-color: #00459e;
+  }
+  
+  .clear-btn {
+    display: block;
+    margin: 0 auto 20px auto;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 7px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .clear-btn:hover {
+    background-color: #c0392b;
+  }
+  
+  .table-container {
+    overflow-x: auto;
+    border-radius: 8px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  thead {
+    background-color: #005bbb;
+    color: white;
+  }
+  
+  th, td {
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .btn {
+    background-color: #005bbb;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #004497;
+  }
+  .status-select {
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    background-color: #f7f9fb;
+    color: #333;
+    transition: border 0.3s ease;
+  }
+  
+  .status-select:focus {
+    border-color: #005bbb;
+    outline: none;
+  }
+  
