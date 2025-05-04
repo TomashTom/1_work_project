@@ -105,14 +105,15 @@ function Kontaktai() {
       [name]: value
     }));
   };
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
-      await axios.post('http://localhost:3000/api/contact', formData);
+      await axios.post('http://localhost:5000/api/contact', formData);
       setSuccess(true);
-
+  
       // Išvalome laukus
       setFormData({
         name: '',
@@ -122,13 +123,14 @@ function Kontaktai() {
         message: ''
       });
       setCharCount(0);
-
-      setTimeout(() => setSuccess(false), 3000); // Žinutė dingsta po 3s
+  
+      setTimeout(() => setSuccess(false), 3000);
     } catch (err) {
       console.error('Klaida siunčiant duomenis:', err);
       alert('Nepavyko išsiųsti žinutės. Bandykite vėliau.');
     }
   };
+  
 
   return (
     <>

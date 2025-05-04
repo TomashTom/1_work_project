@@ -7,7 +7,7 @@ router.post('/', async (req, res) => {
   const { name, email, phone, type, message } = req.body;
 
   try {
-    const newContact = await Contact.create({ name, email, phone, type, message });
+    const newContact = await Contact.create({ name, email, phone, type, message, status: 'Nauja'  });
     res.status(201).json({ message: 'Žinutė išsaugota', contact: newContact });
   } catch (error) {
     console.error('Klaida saugant kontaktą:', error);
@@ -39,11 +39,17 @@ router.delete('/:id', async (req, res) => {
 
 // Atnaujinti paraiškos būseną
 router.put('/:id', async (req, res) => {
-  try {
-    const updated = await Contact.findByIdAndUpdate(req.params.id, { status: req.body.status }, { new: true });
-    res.json(updated);
-  } catch (err) {
-    res.status(500).json({ error: 'Nepavyko atnaujinti būsenos' });
-  }
-});
+    try {
+      const updated = await Contact.findByIdAndUpdate(
+        req.params.id,
+        { ...req.body },
+        { new: true, runValidators: true }
+      );
+      res.json(updated);
+    } catch (err) {
+      console.error('Klaida atnaujinant paraišką:', err);
+      res.status(500).json({ error: 'Nepavyko atnaujinti paraiškos' });
+    }
+  });
+  
 module.exports = router;

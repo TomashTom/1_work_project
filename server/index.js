@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json()); 
 
 
- authRoutes:
+
 const authRoutes = require('./routes/authRoutes');
 app.use('/api/auth', authRoutes); 
 

@@ -474,4 +474,34 @@ tr:nth-child(even) {
     border-color: #005bbb;
     outline: none;
   }
+
+
+
+  .pagination {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .pagination button {
+    margin: 0 4px;
+    padding: 4px 8px;
+    font-size: 0.85rem;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    color: #333;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  
+  .pagination button:hover {
+    background: #e0e0e0;
+  }
+  
+  .pagination button.active {
+    background: #4caf50;
+    color: #fff;
+    border-color: #4caf50;
+  }
+  
   
