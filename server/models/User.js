@@ -4,35 +4,35 @@ const bcrypt = require('bcrypt');
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,
+    required: [true, 'Slapyvardis yra privalomas.'],
     trim: true
   },
   email: { 
-    type: String, 
-    unique: true, 
-    required: true, 
+    type: String,
+    unique: true,
+    required: [true, 'El. pašto adresas yra privalomas.'],
     lowercase: true,
     trim: true
   },
   password: {
     type: String,
-    required: true,
-    minlength: 6
+    required: [true, 'Slaptažodis yra privalomas.'],
+    minlength: [6, 'Slaptažodis turi būti bent 6 simbolių.']
   },
   phone: {
     type: String,
-    trim: true,
-    required: true,
+    required: [true, 'Telefono numeris yra privalomas.'],
+    trim: true
+  },
+  dateOfBirth: {
+    type: Date,
+    required: [true, 'Gimimo data yra privaloma.']
   },
   address: {
     street: String,
     city: String,
     zip: String,
     country: String
-  },
-  dateOfBirth: {
-    type: Date,
-    required: true,
   },
   avatarUrl: {
     type: String, // URL į nuotrauką (galima naudoti Cloudinary, Firebase ar pan.)
